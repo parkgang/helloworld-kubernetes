@@ -4,8 +4,8 @@ kubernetes를 연습해보자!
 
 # Test DockerImage
 
-ingress router를 테스트 할 떄 사용된 image입니다.
-`test-docker` 디렉터리에서 build 후 사용하도록 합니다.
+ingress router를 테스트 할 떄 사용된 image입니다. <br />
+`test-docker` 디렉터리에서 build 후 사용하도록 합니다. <br />
 
 > ingress 실습 때 해당 image가 필요합니다!
 
