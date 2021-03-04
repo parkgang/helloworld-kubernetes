@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echo-deploy
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: echo
+  template:
+    metadata:
+      labels:
+        app: echo
+    spec:
+      containers:
+        - name: app
+          image: ghcr.io/subicura/counter:latest
+          env:
+            - name: REDIS_HOST
+              value: 'localhost'
+          volumeMounts:
+            - name: varlog
+              mountPath: /var
+        - name: db
+          image: redis
+          volumeMounts:
+            - name: varlog
+              mountPath: /var
+      volumes:
+        - name: varlog
+          hostPath:
+            path: /var/log
