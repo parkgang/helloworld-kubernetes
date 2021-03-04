@@ -19,3 +19,5 @@ docker run -d -p 5000:6060 node-router-test:v0.1.0
 
 - ingress
   - docker for desktop cluster 환경 (localhost) 에서 실행할 수 있도록 수정
+- local-volume
+  - ReplicaSet에서 테스트를 위해 `test-` 시리즈 파일이 추가되었습니다.
