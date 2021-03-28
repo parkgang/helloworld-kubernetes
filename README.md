@@ -15,7 +15,7 @@ docker build -t node-router-test:v0.1.0 .
 docker run -d -p 5000:6060 node-router-test:v0.1.0
 ```
 
-# 교안과 `guide` 디렉터리와 다른점
+# 교안과 guide 디렉터리와 다른점
 
 - ingress
   - docker for desktop cluster 환경 (localhost) 에서 실행할 수 있도록 수정
