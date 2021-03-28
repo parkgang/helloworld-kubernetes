@@ -29,6 +29,9 @@ azure kubernetes service 입니다. <br />
 `.yaml` 중 IP, Email 등 부분을 수정해서 apply 해야하는 부분이 있습니다. <br />
 해당 부분을 공식문서를 통해 확인하고 주의하여 apply 하도록 합니다. <br />
 
+아래에 header로 기입되지 않은 시리지는 중요도가 낮거나 트러블 슈팅이 어렵지 않기 때문에 작성되지 않았습니다. <br />
+변경해야하는 값들은 공식문서를 확인하세요. <br />
+
 ## HTTPS ingress
 
 1. cluster-issuer.yaml
