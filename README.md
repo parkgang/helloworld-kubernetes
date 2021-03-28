@@ -28,3 +28,11 @@ docker run -d -p 5000:6060 node-router-test:v0.1.0
 azure kubernetes service 입니다. <br />
 `.yaml` 중 IP, Email 등 부분을 수정해서 apply 해야하는 부분이 있습니다. <br />
 해당 부분을 공식문서를 통해 확인하고 주의하여 apply 하도록 합니다. <br />
+
+## HTTPS ingress
+
+1. cluster-issuer.yaml
+   - spec.acme.email 필히 입력합니다.
+   - k8s `clusterissuer/letsencrypt` object에서 이메일이 유효하지 않아 문제가 발생합니다.
+1. hello-world-ingress.yaml
+   - `MY_CUSTOM_DOMAIN`을 AKS ingress와 리졸빙된 DNS의 도메인 주소로 변경합니다.
