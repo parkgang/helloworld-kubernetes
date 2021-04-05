@@ -2,7 +2,9 @@
 
 kubernetes와 관련된 리소스를 포함하고 있습니다.
 
-# Test DockerImage
+# guide
+
+## Test DockerImage
 
 ingress router를 테스트 할 떄 사용된 image입니다. <br />
 `test-docker` 디렉터리에서 build 후 사용하도록 합니다. <br />
@@ -15,7 +17,7 @@ docker build -t node-router-test:v0.1.0 .
 docker run -d -p 5000:6060 node-router-test:v0.1.0
 ```
 
-# 교안과 guide 디렉터리와 다른점
+## 교안과 guide 디렉터리와 다른점
 
 - ingress
   - docker for desktop cluster 환경 (localhost) 에서 실행할 수 있도록 수정
@@ -47,3 +49,10 @@ azure kubernetes service 입니다. <br />
    > [k8s PVC 볼륨 클레임 확장 레퍼런스](https://kubernetes.io/ko/docs/concepts/storage/persistent-volumes/#%ED%8D%BC%EC%8B%9C%EC%8A%A4%ED%84%B4%ED%8A%B8-%EB%B3%BC%EB%A5%A8-%ED%81%B4%EB%A0%88%EC%9E%84-%ED%99%95%EC%9E%A5)
 
 1. replicas 시나리오를 쉽게 테스트 하도록 `azure-pvc-files-deployment.yaml` 파일을 추가하였습니다.
+
+# application
+
+## mysql
+
+[해당 문서](https://kubernetes.io/ko/docs/tasks/run-application/run-single-instance-stateful-application/)를 참고하여 작성되었습니다. <br />
+PV의 경우 Azure Files를 사용하도록, LoadBalancer를 등록하여 외부에서 접근하도록 커스텀 되어있습니다. <br />
