@@ -39,3 +39,9 @@ azure kubernetes service 입니다. <br />
    - k8s `clusterissuer/letsencrypt` object에서 이메일이 유효하지 않아 문제가 발생합니다.
 1. hello-world-ingress.yaml
    - `MY_CUSTOM_DOMAIN`을 AKS ingress와 리졸빙된 DNS의 도메인 주소로 변경합니다.
+
+## persistent-volume/azure-files-dynamic-pv/azure-file-sc.yaml
+
+퍼시스턴트 볼륨 클레임을 동적으로 확장할 수 있도록 [aks 공식문서](https://docs.microsoft.com/ko-kr/azure/aks/azure-files-dynamic-pv#create-a-storage-class)의 `.yaml` 중 `allowVolumeExpansion: true`를 추가하였습니다.
+
+> [k8s PVC 볼륨 클레임 확장 레퍼런스](https://kubernetes.io/ko/docs/concepts/storage/persistent-volumes/#%ED%8D%BC%EC%8B%9C%EC%8A%A4%ED%84%B4%ED%8A%B8-%EB%B3%BC%EB%A5%A8-%ED%81%B4%EB%A0%88%EC%9E%84-%ED%99%95%EC%9E%A5)
