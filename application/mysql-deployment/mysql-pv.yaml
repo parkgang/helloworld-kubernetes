@@ -14,7 +14,6 @@ mountOptions:
 parameters:
   skuName: Standard_LRS
 allowVolumeExpansion: true
-
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
