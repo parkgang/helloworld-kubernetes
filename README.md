@@ -65,3 +65,16 @@ azure kubernetes service 입니다. <br />
 
 1. PV의 경우 Azure Files를 사용하도록
 1. LoadBalancer를 등록하여 외부에서 접근하도록
+
+## mysql-replicated-stateful
+
+[해당 글](https://ikcoo.tistory.com/m/126)의 `MySQL StatefulSet 이중화 구성`과 [공식 문서](https://kubernetes.io/docs/tasks/run-application/run-replicated-stateful-application/)을 참고하여 작성되었습니다.
+
+블로그 글과 공식 문서가 다른 점은
+
+1. mater slave 표현 사용
+
+추가적으로 제가 넣은 부분은 아래와 같습니다.
+
+1. azure file pv 사용
+2. 주석 한글화
