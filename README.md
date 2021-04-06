@@ -60,4 +60,7 @@ azure kubernetes service 입니다. <br />
 ## mysql
 
 [해당 문서](https://kubernetes.io/ko/docs/tasks/run-application/run-single-instance-stateful-application/)를 참고하여 작성되었습니다. <br />
-PV의 경우 Azure Files를 사용하도록, LoadBalancer를 등록하여 외부에서 접근하도록 커스텀 되어있습니다. <br />
+추가적으로 아래의 내용이 커스텀 되어있습니다.
+
+1. PV의 경우 Azure Files를 사용하도록
+1. LoadBalancer를 등록하여 외부에서 접근하도록
