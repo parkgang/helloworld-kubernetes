@@ -160,8 +160,8 @@ spec:
     - metadata:
         name: pvc-test
       spec:
-        storageClassName: iksoon-nfs-storageclass
-        accessModes: ['ReadWriteMany']
+        storageClassName: my-azurefile
+        accessModes: ['ReadWriteOnce']
         resources:
           requests:
-            storage: 1Gi
+            storage: 5Gi

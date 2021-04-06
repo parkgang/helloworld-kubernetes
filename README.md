@@ -68,14 +68,18 @@ azure kubernetes service 입니다. <br />
 
 ## mysql-replicated-stateful
 
-[해당 글](https://ikcoo.tistory.com/m/126)의 `MySQL StatefulSet 이중화 구성`과 [공식 문서](https://kubernetes.io/docs/tasks/run-application/run-replicated-stateful-application/)을 참고하여 작성되었습니다.
+[해당 글](https://ikcoo.tistory.com/m/126)의 `MySQL StatefulSet 이중화 구성`과 [공식 문서](https://kubernetes.io/docs/tasks/run-application/run-replicated-stateful-application/)을 참고하여 작성되었습니다. <br />
+기준 점은 공식문서 입니다. <br />
 
 공식 문서와 블로그 글이 다른 점은 아래와 같습니다.
 
 1. `primary`를 `master`로 `replica`를 `slave`로 이름 변경
+1. spec.volumeClaimTemplates.spec.accessModes의 값을 `ReadWriteMany` -> `ReadWriteOnce` 으로 변경
 
 추가적으로 제가 변경한 부분은 아래와 같습니다.
 
 1. Azure Files 동적 Volume 사용
+   1. `mysql-sc.yaml` 파일이 추가되어 있습니다.
+      1. StatefulSet에서 오류가 발생하여 `volumeBindingMode: WaitForFirstConsumer`가 추가되어 있습니다.
    1. 이과정에서 자연스럽게 `volumeMounts.name`이 변경되었습니다.
 2. 주석 한글화
