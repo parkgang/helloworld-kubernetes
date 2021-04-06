@@ -1,6 +1,7 @@
 # helloworld-kubernetes
 
-kubernetes와 관련된 리소스를 포함하고 있습니다.
+kubernetes와 관련된 리소스를 포함하고 있습니다. <br />
+각 디렉터리의 사용법 및 이슈가 정리되어 있습니다. <br />
 
 # guide
 
@@ -49,6 +50,10 @@ azure kubernetes service 입니다. <br />
    > [k8s PVC 볼륨 클레임 확장 레퍼런스](https://kubernetes.io/ko/docs/concepts/storage/persistent-volumes/#%ED%8D%BC%EC%8B%9C%EC%8A%A4%ED%84%B4%ED%8A%B8-%EB%B3%BC%EB%A5%A8-%ED%81%B4%EB%A0%88%EC%9E%84-%ED%99%95%EC%9E%A5)
 
 1. replicas 시나리오를 쉽게 테스트 하도록 `azure-pvc-files-deployment.yaml` 파일을 추가하였습니다.
+
+# helm
+
+[helm 공식 문서](https://helm.sh/ko/docs/intro/using_helm/#%EC%84%A4%EC%B9%98-%EC%A0%84-%EC%B0%A8%ED%8A%B8-%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A7%88%EC%9D%B4%EC%A7%95)에서 chart의 구성 옵션을 변경하기 위해 사용된 파일이 있습니다.
 
 # application
 
