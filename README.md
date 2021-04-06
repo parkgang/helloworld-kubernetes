@@ -56,7 +56,9 @@ azure kubernetes service 입니다. <br />
 
 # application
 
-## mysql
+여러 애플리케이션 배포 방법을 정리해놓아 필요할 때 쓸 수 있도록 정리해 놓는 디렉터리입니다.
+
+## mysql-deployment
 
 [해당 문서](https://kubernetes.io/ko/docs/tasks/run-application/run-single-instance-stateful-application/)를 참고하여 작성되었습니다. <br />
 추가적으로 아래의 내용이 커스텀 되어있습니다.
