@@ -6,10 +6,10 @@ metadata:
     app: mysql
 data:
   master.cnf: |
-    # Apply this config only on the master.
+    # master 에만 이 구성을 적용합니다.
     [mysqld]
     log-bin
   slave.cnf: |
-    # Apply this config only on slaves.
+    # slaves 에만 이 구성을 적용합니다.
     [mysqld]
     super-read-only
