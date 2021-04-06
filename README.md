@@ -26,7 +26,7 @@ docker run -d -p 5000:6060 node-router-test:v0.1.0
   - ReplicaSet에서 테스트를 위해 `test-` 시리즈 파일이 추가되었습니다.
   - `test-hostpath.yml` 은 hostPath에 맞게 작성되지 않은 거 같습니다. 추가적으로 공부 후 수정하도록 합니다.
 
-# Azure AKS
+# azure-aks
 
 azure kubernetes service 입니다. <br />
 `.yaml` 중 IP, Email 등 부분을 수정해서 apply 해야하는 부분이 있습니다. <br />
@@ -35,7 +35,7 @@ azure kubernetes service 입니다. <br />
 아래에 header로 기입되지 않은 시리지는 중요도가 낮거나 트러블 슈팅이 어렵지 않기 때문에 작성되지 않았습니다. <br />
 변경해야하는 값들은 공식문서를 확인하세요. <br />
 
-## HTTPS ingress
+## https-ingress-controller
 
 1. cluster-issuer.yaml
    - spec.acme.email 필히 입력합니다.
@@ -43,13 +43,12 @@ azure kubernetes service 입니다. <br />
 1. hello-world-ingress.yaml
    - `MY_CUSTOM_DOMAIN`을 AKS ingress와 리졸빙된 DNS의 도메인 주소로 변경합니다.
 
-## persistent-volume/azure-files-dynamic-pv/azure-file-sc.yaml
+## azure-files-dynamic-pv
 
-1. 퍼시스턴트 볼륨 클레임을 동적으로 확장할 수 있도록 [aks 공식문서](https://docs.microsoft.com/ko-kr/azure/aks/azure-files-dynamic-pv#create-a-storage-class)의 `.yaml` 중 `allowVolumeExpansion: true`를 추가하였습니다.
-
-   > [k8s PVC 볼륨 클레임 확장 레퍼런스](https://kubernetes.io/ko/docs/concepts/storage/persistent-volumes/#%ED%8D%BC%EC%8B%9C%EC%8A%A4%ED%84%B4%ED%8A%B8-%EB%B3%BC%EB%A5%A8-%ED%81%B4%EB%A0%88%EC%9E%84-%ED%99%95%EC%9E%A5)
-
-1. replicas 시나리오를 쉽게 테스트 하도록 `azure-pvc-files-deployment.yaml` 파일을 추가하였습니다.
+1. azure-file-sc.yaml
+   1. 퍼시스턴트 볼륨 클레임을 동적으로 확장할 수 있도록 [aks 공식문서](https://docs.microsoft.com/ko-kr/azure/aks/azure-files-dynamic-pv#create-a-storage-class)의 `.yaml` 중 `allowVolumeExpansion: true`를 추가하였습니다.
+      > [k8s PVC 볼륨 클레임 확장 레퍼런스](https://kubernetes.io/ko/docs/concepts/storage/persistent-volumes/#%ED%8D%BC%EC%8B%9C%EC%8A%A4%ED%84%B4%ED%8A%B8-%EB%B3%BC%EB%A5%A8-%ED%81%B4%EB%A0%88%EC%9E%84-%ED%99%95%EC%9E%A5)
+   1. replicas 시나리오를 쉽게 테스트 하도록 `azure-pvc-files-deployment.yaml` 파일을 추가하였습니다.
 
 # helm
 
