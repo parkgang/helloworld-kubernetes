@@ -160,7 +160,7 @@ spec:
     - metadata:
         name: pvc-test
       spec:
-        storageClassName: my-azurefile
+        storageClassName: default
         accessModes: ['ReadWriteOnce']
         resources:
           requests:

@@ -78,8 +78,8 @@ azure kubernetes service 입니다. <br />
 
 추가적으로 제가 변경한 부분은 아래와 같습니다.
 
-1. Azure Files 동적 Volume 사용
-   1. `mysql-sc.yaml` 파일이 추가되어 있습니다.
-      1. StatefulSet에서 오류가 발생하여 `volumeBindingMode: WaitForFirstConsumer`가 추가되어 있습니다.
-   1. 이과정에서 자연스럽게 `volumeMounts.name`이 변경되었습니다.
+1. azure-disks-dynamic 사용
+   1. aks에 기본적으로 탑제되는 `default` StorageClass를 사용합니다.
+   1. azure-files-dynamic는 오류가 발생합니다. [stackoverflow](https://stackoverflow.com/questions/66973503/configure-mysql-replication-with-k8s-statefulset)
+      > 이것 때문에 한참 고생함ㅠㅠㅠ😭
 2. 주석 한글화
