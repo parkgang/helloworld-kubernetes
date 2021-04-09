@@ -45,6 +45,8 @@ azure kubernetes service 입니다. <br />
 
 ## azure-files-dynamic-pv
 
+> StorageClass의 경우 aks 생성 시 default으로 생성 되는 시리즈가 있습니다. 특별한 case를 위해 커스텀을 해야하는 상황이 아니라면 default 시리즈 StorageClass를 이용하도록 합니다.
+
 1. azure-file-sc.yaml
    1. 퍼시스턴트 볼륨 클레임을 동적으로 확장할 수 있도록 [aks 공식문서](https://docs.microsoft.com/ko-kr/azure/aks/azure-files-dynamic-pv#create-a-storage-class)의 `.yaml` 중 `allowVolumeExpansion: true`를 추가하였습니다.
       > [k8s PVC 볼륨 클레임 확장 레퍼런스](https://kubernetes.io/ko/docs/concepts/storage/persistent-volumes/#%ED%8D%BC%EC%8B%9C%EC%8A%A4%ED%84%B4%ED%8A%B8-%EB%B3%BC%EB%A5%A8-%ED%81%B4%EB%A0%88%EC%9E%84-%ED%99%95%EC%9E%A5)
@@ -63,7 +65,9 @@ azure kubernetes service 입니다. <br />
 [해당 문서](https://kubernetes.io/ko/docs/tasks/run-application/run-single-instance-stateful-application/)를 참고하여 작성되었습니다. <br />
 추가적으로 아래의 내용이 커스텀 되어있습니다.
 
-1. PV의 경우 Azure Files를 사용하도록
+1. Azure Files를 사용할 수 있도록 StorageClass 추가
+   > `/azure-aks/azure-files-dynamic-pv/azure-file-sc.yaml`랑 동일합니다.
+1. PVC를 Azure Files를 사용하여 생성하도록
 1. LoadBalancer를 등록하여 외부에서 접근하도록
 
 ## mysql-replicated-stateful
