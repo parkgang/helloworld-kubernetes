@@ -68,6 +68,7 @@ azure kubernetes service 입니다. <br />
 1. Azure Files를 사용할 수 있도록 StorageClass 추가
    > `/azure-aks/azure-files-dynamic-pv/azure-file-sc.yaml`랑 동일합니다.
 1. PVC를 Azure Files를 사용하여 생성하도록
+   > `/azure-aks/azure-files-dynamic-pv/azure-file-pvc.yaml`랑 동일합니다.
 1. LoadBalancer를 등록하여 외부에서 접근하도록
 
 ## mysql-replicated-stateful
