@@ -78,13 +78,20 @@ azure kubernetes service 입니다. <br />
 
 공식 문서와 블로그 글이 다른 점은 아래와 같습니다.
 
-1. `primary`를 `master`로 `replica`를 `slave`로 이름 변경
-1. spec.volumeClaimTemplates.spec.accessModes의 값을 `ReadWriteMany` -> `ReadWriteOnce` 으로 변경
+1. 전체적으로
+   1. `primary` => `master` 변경
+   1. `replica` => `slave` 변경
+1. mysql-statefulset.yaml
+   1. spec.volumeClaimTemplates.metadata.name의 값을 `pvc-test` => `data` 으로 변경
+   1. spec.volumeClaimTemplates.spec.accessModes의 값을 `ReadWriteMany` => `ReadWriteOnce` 으로 변경
 
 추가적으로 제가 변경한 부분은 아래와 같습니다.
 
-1. azure-disks-dynamic 사용
-   1. aks에 기본적으로 탑제되는 `default` StorageClass를 사용합니다.
-   1. azure-files-dynamic는 오류가 발생합니다. [stackoverflow](https://stackoverflow.com/questions/66973503/configure-mysql-replication-with-k8s-statefulset)
-      > 이것 때문에 한참 고생함ㅠㅠㅠ😭
-2. 주석 한글화
+1. 전체적으로
+   1. 주석 한글화
+1. mysql-statefulset.yaml
+   1. spec.volumeClaimTemplates.spec.storageClassName `default` 추가
+      1. StorageClass로 azure-disks-dynamic 사용
+         1. aks에 기본적으로 탑제되는 `default` StorageClass를 사용합니다.
+         1. azure-files-dynamic는 오류가 발생합니다. [stackoverflow](https://stackoverflow.com/questions/66973503/configure-mysql-replication-with-k8s-statefulset)
+            > 이것 때문에 한참 고생함ㅠㅠㅠ😭

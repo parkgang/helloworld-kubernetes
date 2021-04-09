@@ -56,7 +56,7 @@ spec:
               # 백업 준비
               xtrabackup --prepare --target-dir=/var/lib/mysql
           volumeMounts:
-            - name: pvc-test
+            - name: data
               mountPath: /var/lib/mysql
               subPath: mysql
             - name: conf
@@ -71,7 +71,7 @@ spec:
             - name: mysql
               containerPort: 3306
           volumeMounts:
-            - name: pvc-test
+            - name: data
               mountPath: /var/lib/mysql
               subPath: mysql
             - name: conf
@@ -141,7 +141,7 @@ spec:
               exec ncat --listen --keep-open --send-only --max-conns=1 3307 -c \
                 "xtrabackup --backup --slave-info --stream=xbstream --host=127.0.0.1 --user=root"
           volumeMounts:
-            - name: pvc-test
+            - name: data
               mountPath: /var/lib/mysql
               subPath: mysql
             - name: conf
@@ -158,10 +158,10 @@ spec:
             name: mysql
   volumeClaimTemplates:
     - metadata:
-        name: pvc-test
+        name: data
       spec:
         storageClassName: default
         accessModes: ['ReadWriteOnce']
         resources:
           requests:
-            storage: 5Gi
+            storage: 10Gi
