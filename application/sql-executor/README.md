@@ -33,3 +33,13 @@ docker run --rm -it -e MYSQL_ROOT_PASSWORD=example rlaworhkd430/sql-executor
 
 - 하드코딩된 DB 정보 shell script 실행 시 파라미터 형식으로 입력
 - 특정 API Body 내 파리미터로 호출 해 줄 경우 해당 값 사용
+
+# aks에서 실행하기 위해 서버로 올림
+
+```shell
+docker build -t ghcr.io/parkgang/sql-executor .
+
+docker push ghcr.io/parkgang/sql-executor
+
+kubectl run sql-executor --image ghcr.io/parkgang/sql-executor:latest --env="MYSQL_HOST=mysql-0.mysql.prod"
+```

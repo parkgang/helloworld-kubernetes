@@ -4,4 +4,6 @@ WORKDIR /tmp
 
 COPY ./init.sql ./init.sql
 
-CMD ["bash", "-c", "mysql -u root -h host.docker.internal --port=3306 --password=example < ./init.sql"]
+ENV MYSQL_HOST null
+
+CMD ["bash", "-c", "mysql -u root -h $MYSQL_HOST --port=3306 --password= < ./init.sql"]
