@@ -19,5 +19,16 @@ docker build -t ghcr.io/parkgang/helloworld-kubernetes/application/mysql-sql-exe
 docker push ghcr.io/parkgang/helloworld-kubernetes/application/mysql-sql-executor
 
 # k8s 실행 (mysql host 주소는 환경에 맞게 변경하여 사용합니다)
-kubectl run sql-executor --image ghcr.io/parkgang/helloworld-kubernetes/application/mysql-sql-executor:latest --env="MYSQL_HOST=mysql-0.mysql" --rm
+kubectl run sql-executor --image ghcr.io/parkgang/helloworld-kubernetes/application/mysql-sql-executor:latest --env="MYSQL_HOST=mysql-0.mysql"
+```
+
+# 이외
+
+아래의 명령어로 실행결과를 확인하실 수 있습니다.
+
+```shell
+kubectl run mysql-client --image=mysql:5.7 -it --rm --restart=Never -- /bin/bash
+
+# host는 환경에 맞게 변경합니다.
+mysql -h mysql-0.mysql -p
 ```
